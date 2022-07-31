@@ -67,8 +67,6 @@ public class DefaultOrderService implements OrderService {
 			throw new ApiException.InvalidParameter("Invalid credit card number field");
 		}
 
-		// TODO: Validation checks for address, phone, email, ccNumber
-
 		if (expiryDateIsInvalid(customerForm.getCcExpiryMonth(), customerForm.getCcExpiryYear())) {
 			throw new ApiException.InvalidParameter("Invalid expiry date");
 		}
@@ -91,8 +89,6 @@ public class DefaultOrderService implements OrderService {
 			return true;
 		}
 
-		// TODO: return true when the provided month/year is before the current month/yeaR
-		// HINT: Use Integer.parseInt and the YearMonth class
 		return false;
 
 	}
@@ -116,7 +112,6 @@ public class DefaultOrderService implements OrderService {
 			if(databaseBook.getCategoryId() != item.getBookForm().getCategoryId()){
 				throw new ApiException.InvalidParameter("Invalid book category");
 			}
-			// TODO: complete the required validations
 		});
 	}
 
